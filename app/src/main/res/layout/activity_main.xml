@@ -1,5 +1,4 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,11 +29,11 @@
         android:layout_height="28dp"
         android:layout_marginTop="192dp"
         android:background="@android:color/white"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
         android:ems="10"
         android:hint=" Digite o primeiro número"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/num2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -49,7 +48,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doSum"
         android:text="+"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/num2" />
@@ -61,7 +59,6 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doMul"
         android:text="x"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
@@ -75,7 +72,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doDiv"
         android:text="/"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +85,6 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="12dp"
         android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doSub"
         android:text="-"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/num2" />
@@ -99,8 +94,8 @@
         android:layout_width="364dp"
         android:layout_height="50dp"
         android:layout_marginStart="41dp"
-        android:layout_marginTop="184dp"
         android:layout_marginEnd="48dp"
+        android:layout_marginBottom="60dp"
         android:background="@android:color/white"
         android:text=" Resultado"
         android:textColor="@android:color/black"
@@ -108,9 +103,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.404"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/num2"
@@ -120,15 +113,40 @@
         android:layout_marginEnd="71dp"
         android:layout_marginBottom="452dp"
         android:background="@android:color/white"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
         android:ems="10"
         android:hint=" Digite o segundo número"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/clearAll"
+        android:layout_width="363dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="clearAll"
+        android:text="Limpar Campos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num2" />
+
+    <Button
+        android:id="@+id/changeScreen"
+        android:layout_width="363dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="changeScreen"
+        android:text="Mudar de tela"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clearAll" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
